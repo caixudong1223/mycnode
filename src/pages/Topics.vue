@@ -52,7 +52,7 @@
         'tab': 'job'
     }]
 
-    const baseUrl = 'https://cnodejs.org/api/v1'
+    const baseUrl = 'https://cnodejs.org/api/v1'   
     export default {
         data() {
             return {

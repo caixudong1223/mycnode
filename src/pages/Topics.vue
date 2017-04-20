@@ -103,8 +103,11 @@
     }
 
     .header{
-        padding: 10px;  
         border-bottom: 1px solid hsla(0,0%,59%,.1);
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 15px 0;
+        background-color: #fff;
     }
 
     .header ul li{
@@ -127,6 +130,7 @@
         margin: 0 auto;
         max-width: 960px;
         position: relative;
+        background-color: #fff
     }
 
     .card{
@@ -154,9 +158,7 @@
     }
 
     .topicInfo{
-        padding-left: 20px;     
-        /*text-decoration: none;
-        text-decoration-style: none*/
+        padding-left: 20px;    
         width: 90%;
     }
 
@@ -198,13 +200,6 @@
     .timeInfo{
         float: right;
     }
-
-    /*.tag{
-        width: 0;
-        height: 0;
-        border-top: 20px solid red;
-        border-left: 20px solid transparent;
-    }   */
 
     .tag-share{
         width: 0;

@@ -6,7 +6,7 @@
                 <span>发布于{{time | formatDate }}</span>
                 <span>作者:{{loginname}}</span>
                 <span>{{visitcount}}次浏览</span>
-                <span>来自{{tab}}</span>
+                <span>来自{{tab | formatTab}}</span>
             </p>
         </div>
         <hr>

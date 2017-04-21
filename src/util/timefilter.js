@@ -2,7 +2,7 @@
  * @Author: caixudong 
  * @Date: 2017-04-19 14:23:43 
  * @Last Modified by: caixudong
- * @Last Modified time: 2017-04-19 14:29:47
+ * @Last Modified time: 2017-04-21 10:13:44
  * @Desc: 格式化时间
  */
 
@@ -28,3 +28,19 @@ export const formatDate = (str) => {
         return parseInt(time / 31536000000) + '年前'
     }
  }
+
+
+export const formatTab = (str) => {
+    if(!str) return ''
+    if(str === 'share'){
+        return '分享'
+    }else if(str === 'ask'){
+        return '问答'
+    }else if(str === 'good'){
+        return '精华'
+    }else if(str ==='job'){
+        return '招聘'
+    }else{
+        return '全部'
+    }
+}

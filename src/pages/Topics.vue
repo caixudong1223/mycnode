@@ -31,6 +31,10 @@
                 </li>
             </ul>
         </div>
+        <div class="pageBox">
+            <el-pagination @current-change="handlePageChange" :current-page="page.curPage" :total="500" :page-size="page.pageNum" layout=" prev, pager, next">
+            </el-pagination>
+        </div>
     </div>
 </template>
 
@@ -58,7 +62,13 @@
             return {
                 'itemTab': tabs,
                 'initIndex': 0,
-                'topicsList': []
+                'topicsList': [],
+                'curTab': '',
+                'page': {
+                    curPage: 1,
+                    totalNum: 100,
+                    pageNum: 20
+                }
             }
         },
         created () {
@@ -73,19 +83,40 @@
             },
             loadTopicsByIndex(index){
                 var _this = this
+                _this.curTab = _this.itemTab[index].tab
+                var params = {
+                    'page': 1,
+                    'tab': _this.itemTab[index].tab,
+                    'limit': 20,
+                    'mdrender': true
+                }
+                _this.loadTopics(params)
+            },
+
+            loadTopics(params){
+                var _this = this
                 this.$ajax.get(baseUrl+'/topics',{
-                    params: {
-                        'page': 1,
-                        'tab': _this.itemTab[index].tab,
-                        'limit': 20,
-                        'mdrender': true
-                    }                   
-               }).then(function(response){
+                    params             
+                }).then(function(response){
                    _this.topicsList = response.data.data
-               }).catch(function(error){
+                   _this.page.curPage = params.page
+                //    _this.page.totalNum = 1000;
+                }).catch(function(error){
                    console.log(error)
-               })
+                })
+            },
+          
+            handlePageChange(val){
+                var _this = this
+                var params = {
+                    'page': val,
+                    'tab': _this.curTab,
+                    'limit': 20,
+                    'mdrender': true
+                }
+                _this.loadTopics(params)
             }
+
         }
     }
 </script>
@@ -131,6 +162,14 @@
         max-width: 960px;
         position: relative;
         background-color: #fff
+    }
+
+    .pageBox{
+        width: 100%;
+        margin: 0 auto;
+        max-width: 960px;
+        position: relative;
+        background-color: #fff;
     }
 
     .card{
@@ -227,5 +266,11 @@
         height: 0;
         border-top: 20px solid #EEA2AD;
         border-left: 20px solid transparent;
+    }
+
+    .el-pagination{
+        padding: 10px;
+        border: 1px solid hsla(0,0%,59%,.1);
+        border-top: none;
     }
 </style>

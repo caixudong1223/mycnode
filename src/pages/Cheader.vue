@@ -1,30 +1,44 @@
 <template>
     <div class="nav">
         <el-menu theme="dark" :default-active="defaultActiveIndex" mode="horizontal">
-            <el-menu-item index="1">
-                <router-link to="/">首页</router-link>
-            </el-menu-item>
-            <el-menu-item index="2">
-                <router-link to="/getstart">新手入门</router-link>
-            </el-menu-item>
-            <el-menu-item index="3">
-                <router-link to="/api">API</router-link>
-            </el-menu-item>
-            <el-menu-item index="4">
-                <router-link to="/about">关于</router-link>
-            </el-menu-item>
-            <el-menu-item index="5" v-if="!loginState">
-                <router-link to="/signup">注册</router-link>
-            </el-menu-item>
-            <el-menu-item index="6" v-if="!loginState">
-                <router-link to="/signin">登录</router-link>
-            </el-menu-item>
-            <el-menu-item index="7" v-if="loginState">
-                <router-link to="/setting">设置</router-link>
-            </el-menu-item>
-            <el-menu-item index="8" v-if="loginState" @click="loginOut">
-                <router-link to="/">退出</router-link>
-            </el-menu-item>
+            <router-link to="/">
+                <el-menu-item index="1">首页</el-menu-item>
+            </router-link>
+            
+            <router-link to="/getstart">    
+                <el-menu-item index="2">新手入门</el-menu-item>
+            </router-link>
+            
+            
+            <router-link to="/api">
+                <el-menu-item index="3">API</el-menu-item>
+            </router-link>
+            
+            
+            <router-link to="/about">
+                <el-menu-item index="4">关于</el-menu-item>
+            </router-link>
+            
+            
+            <router-link to="/signup">
+                <el-menu-item index="5" v-if="!loginState">注册</el-menu-item>
+            </router-link>
+            
+            
+            <router-link to="/signin">
+                <el-menu-item index="6" v-if="!loginState">登录</el-menu-item>
+            </router-link>
+            
+            
+            <router-link to="/setting">
+                <el-menu-item index="7" v-if="loginState">设置</el-menu-item>
+            </router-link>
+            
+            
+            <router-link to="/">
+                <el-menu-item index="8" v-if="loginState" @click="loginOut">退出</el-menu-item>
+            </router-link>
+            
         </el-menu>
     </div>
 </template>

@@ -86,4 +86,8 @@
         padding: 10px 20px;
     }
 
+    .markdown-text{
+        /*padding: 10px 20px;*/
+    }
+
 </style>

@@ -40,7 +40,8 @@
             login() {
                 var _this = this;
                 _this.$ajax.post(baseUrl, {
-                    accesstoken: _this.form.accessToken
+                    // accesstoken: _this.form.accessToken,
+                    accesstoken: 'ea680108-d481-4fc8-8826-8dc5e32907d4'
                 }).then((response) => {
                     var data = response.data;
                     if(data.success === true) {

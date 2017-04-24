@@ -30,9 +30,9 @@
             </router-link>
             
             
-            <router-link to="/setting">
+            <!--<router-link to="/setting">
                 <el-menu-item index="7" v-if="loginState">设置</el-menu-item>
-            </router-link>
+            </router-link>-->
             
             
             <router-link to="/">

@@ -49,6 +49,7 @@
                             type: 'success',
                             message: '欢迎'+data.loginname
                         })
+                        
                         window.localStorage.setItem('loginState',true)
                         window.localStorage.setItem('accessToken',_this.form.accessToken)
                         window.localStorage.setItem('userName', data.loginname)
